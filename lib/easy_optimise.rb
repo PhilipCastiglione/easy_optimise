@@ -3,7 +3,7 @@ require "easy_optimise/version"
 module EasyOptimise
   def self.extended(base)
     base.class_eval do
-      def self.has_optimised_attached_file(name, options={})
+      def self.has_attached_optimised_file(name, options={})
         full_options = Marshal.load(Marshal.dump(options))
 
         unoptimised_styles = full_options.delete(:unoptimised_styles)
