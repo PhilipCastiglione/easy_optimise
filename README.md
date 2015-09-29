@@ -1,8 +1,6 @@
 # EasyOptimise
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/easy_optimise`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A wrapper built on the <a href="https://github.com/thoughtbot/paperclip" target="_blank">Paperclip</a> attachment gem. EasyOptimise adds the abililty to optimise image sizes for web using sane defaults for compression and quality. The image optimisation is applied using ImageMagick utility functions.
 
 ## Installation
 
@@ -16,24 +14,46 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself using Rubygems:
 
     $ gem install easy_optimise
 
 ## Usage
 
-TODO: Write usage instructions here
+In paperclip you might:
 
-## Development
+```ruby
+has_attached_file :avatar, 
+  styles: { medium: "300x300>",
+            thumb:  "100x100>" },
+  default_url: "/images/:style/missing.png"
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+With easy optimise, to optimise the images you serve up, just:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+has_attached_optimised_file :avatar,
+  styles: { medium: "300x300>",
+            thumb:  "100x100>" },
+  default_url: "/images/:style/missing.png"
+```
+
+If you want to keep a particular style unoptimised for precise quality (or because you like big slow websites and that's just how you roll), then:
+
+
+```ruby
+has_attached_optimised_file :avatar,
+  styles: { medium: "300x300>",
+            thumb:  "100x100>" },
+  unoptimised_styles: { banner: "1200x800#" },
+  default_url: "/images/:style/missing.png"
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/easy_optimise/fork )
+1. Fork it ( https://github.com/PhilipCastiglione/easy_optimise/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+6. Party

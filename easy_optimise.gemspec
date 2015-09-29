@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.date          = EasyOptimise::DATE
 
   spec.summary       = "A simple paperclip attachment image optimiser."
-  spec.description   = "A wrapper of the paperclip attachment handler that uses sane defaults to optimally compress attached images using imagemagick library functions."
+  spec.description   = "A wrapper of the paperclip attachment handler that uses sane defaults to optimally compress attached images using imagemagick utility functions."
 
   spec.authors       = ["Philip Castiglione"]
   spec.email         = ["philipcastiglione@gmail.com"]
