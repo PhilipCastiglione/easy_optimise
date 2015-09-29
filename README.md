@@ -29,7 +29,13 @@ has_attached_file :avatar,
   default_url: "/images/:style/missing.png"
 ```
 
-With easy optimise, to optimise the images you serve up, just:
+With EasyOptimise, to optimise the images you serve up, just extend the gem in your model:
+
+```ruby
+extend EasyOptimise
+```
+
+and then slip in one sneaky word in your attachment method:
 
 ```ruby
 has_attached_optimised_file :avatar,
