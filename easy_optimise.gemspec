@@ -6,20 +6,14 @@ require 'easy_optimise/version'
 Gem::Specification.new do |spec|
   spec.name          = "easy_optimise"
   spec.version       = EasyOptimise::VERSION
-  spec.authors       = ["Phil DESTROYER OF WORLDS"]
-  spec.email         = ["phil@hhd.com.au"]
+  spec.date          = EasyOptimise::DATE
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "A simple paperclip attachment image optimiser."
+  spec.description   = "A wrapper of the paperclip attachment api that uses sane defaults to optimally compress attached images using imagemagick library functions."
 
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
-  # delete this section to allow pushing this gem to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
+  spec.authors       = ["Philip Castiglione"]
+  spec.email         = ["philipcastiglione@gmail.com"]
+  spec.homepage      = "https://github.com/PhilipCastiglione/easy_optimise"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
@@ -28,4 +22,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
+
+  spec.add_runtime_dependency "paperclip", "~> 4.2"
 end
