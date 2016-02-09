@@ -62,8 +62,9 @@ has_attached_optimised_file :avatar,
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
-6. Party party, w00 w00
+6. Party
 
+```
                                .--------.
                              .: : :  :___`.
                            .'!!:::::  \\_\ `.
@@ -86,4 +87,5 @@ has_attached_optimised_file :avatar,
            )(    |          |,--.       ____/ /  /\\ ,-._.-'
         ,-')('-. |          |\`;/   .-()___  :  |`.!,-'`'/`-._
        (  '  `  )`-._    _.-'|;,|    `-,    \_\__\`,-'>-.,-._
-        `-....-'     ````    `--'      `-._       (`- `-._`-.   hjw
+        `-....-'     ````    `--'      `-._       (`- `-._`-.  
+```
